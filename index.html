@@ -67,9 +67,9 @@
             labelContainer.childNodes[0].innerHTML = "정상 사과 입니다."
         } else if(prediction[1].className == "rotten_apple" && prediction[1].probability.toFixed(2) == 1.00){
             cnt++;
-            labelContainer2.innerHTML = "감지된 불량 사과 수:"+cnt;
             if(cnt == 5){
                 labelContainer.childNodes[0].innerHTML = "불량 사과 입니다."
+                labelContainer2.innerHTML = "감지된 불량 사과 수:"+cnt;
                 var audio = new Audio('detect.mp3'); //불량품이 감지되었습니다.2초짜리 음성파일
                 console.log('5초 간격으로 불량 찍힘');
             }
