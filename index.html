@@ -71,9 +71,10 @@
                 labelContainer2.innerHTML = "감지된 불량 사과 수:"+cnt;
                 labelContainer.childNodes[0].innerHTML = "불량 사과 입니다."
                 var audio = new Audio('detect.mp3');
-                setTimeout(function() {
-                    audio.play();
-                }, 3000);
+                // setTimeout(function() {
+                //     audio.play();
+                // }, 3000);
+                setInterval(() => audio.play(), 4000);
             } else {
                 labelContainer.childNodes[0].innerHTML = "알 수 없습니다."
             }
