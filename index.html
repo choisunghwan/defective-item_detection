@@ -76,7 +76,8 @@
                 sec = 0;  
                 labelContainer2.innerHTML = "감지된 불량 사과 수:"+count;
                 var audio = new Audio('detect.mp3'); //불량품이 감지되었습니다.2초짜리 음성파일
-                console.log('5초 간격으로 불량 찍힘');
+                audio.play();
+                // console.log('5초 간격으로 불량 찍힘');
             }
 
 
