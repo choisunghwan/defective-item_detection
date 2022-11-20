@@ -1,0 +1,28 @@
+{
+  "name": "detection",
+  "version": "1.0.0",
+  "description": "불량 객체 감지 시스템",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/choisunghwan/defective-item_detection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/choisunghwan/defective-item_detection/issues"
+  },
+  "homepage": "https://github.com/choisunghwan/defective-item_detection#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.3",
+    "morgan": "^1.10.0",
+    "mssql": "^9.0.1",
+    "ws": "^8.11.0"
+  }
+}
