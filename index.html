@@ -35,8 +35,8 @@
             return year + "-" + month + "-" + day;
         }
         
-        //WebSocket 설정
-        const webSocketUrl = "ws://192.168.139.1:8001";
+        //WebSocket 설정 (개인 IP 입력)
+        const webSocketUrl = "ws://10.32.9.38:8001";
         
         let ws = new WebSocket(webSocketUrl);
         // json.parse() 위함
@@ -81,7 +81,7 @@
 
             // 웹 캠 설정을 위한 편의 기능(오직 웹캠만 설정하는 코드)
             const flip = true; // 웹캠을 뒤집을지 여부: 거울모드 설정/좌우반전 설정을 할 수 있다.
-            webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+            webcam = new tmImage.Webcam(400, 400, flip); // width, height, flip
             await webcam.setup(); // 웹캠 접속을 요청
             await webcam.play(); // 웹캠 play하기▶
             window.requestAnimationFrame(loop); //게속해서 frame 송출을 위한 코드

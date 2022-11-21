@@ -2,19 +2,20 @@ var Connection = require("tedious").Connection;
 var Request = require("tedious").Request;
 var TYPES = require("tedious").TYPES;
 var WebSocketServer = require("ws").Server,
-  wss = new WebSocketServer({ port: 8001 });
+wss = new WebSocketServer({ port: 8001 });
 CLIENTS = [];
 updown = [];
 fireDetector = [];
 objectDetector = [];
-wss.on("connection", function (ws) {
-  //CLIENTS.push(ws);
 
+
+wss.on("connection", function (ws) {
+  
+  
   ws.on("message", function (message) {
     console.log("received: %s", message);
     var jsonData = JSON.parse(message);
-    //console.log("json.req=" + jsonData[0].req);
-
+    
     if (jsonData[0].req == "con") {
       CLIENTS.push(ws);
       console.log(updown);
@@ -110,13 +111,11 @@ wss.on("connection", function (ws) {
       objectInfo["req"] = jsonData[0].req;
       objectInfo["objectDefCnt"] = jsonData[0].objectNDefCnt;
       objectDetector.push(objectInfo);
-      //executeStatement4();
-      //console.log(objectDetector[0].objectCnt);
-      //sendAll(message);
       objectDetector = [];
     }
   });
-
+  
+  //WebSocket 연결 종료
   ws.on("close", function (message) {
     console.log("close");
     for (var i = 0; i < CLIENTS.length; i++) {
@@ -125,6 +124,7 @@ wss.on("connection", function (ws) {
       }
     }
   });
+
   //ws.send("NEW USER JOINED");
   ws.send(JSON.stringify("이선호등장"));
 });
